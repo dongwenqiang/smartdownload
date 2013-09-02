@@ -40,15 +40,8 @@ div:hover {
   color: yellow;
 }
 </style>
-<script>
-function click(color) {
-	console.log("color"+"ii");
-  chrome.tabs.executeScript(null,
-      {code:"document.body.style.backgroundColor='" + color.id + "'"});
-  window.close();
-}
-</script>
-<div onclick="click(this)" id="red">red</div>
-<div onclick="click(this)" id="blue">blue</div>
-<div onclick="click(this)" id="green">green</div>
-<div onclick="click(this)" id="yellow">yellow</div>
+<script src="background.js"></script>
+<div id="red">red</div>
+<div id="blue">blue</div>
+<div id="green">green</div>
+<div id="yellow">yellow</div>

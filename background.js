@@ -1,10 +1,11 @@
-chrome.browserAction.onClicked.addListener(
-	function(tab){
-		console.log("t:"+tab.url+"red!");
-		chrome.tabs.executeScript(
-		{
-			code:'document.body.style.backgroundColor="red"'
-		}
-			);
-	}
-	);
+document.addEventListener('DOMContentLoaded', function () {
+  var divs = document.querySelectorAll('div');
+  for (var i = 0; i < divs.length; i++) {
+    divs[i].addEventListener('click', click);
+  }
+});
+function click(e) {
+  chrome.tabs.executeScript(null,
+      {code:"alert('xxx')"});
+  window.close();
+}
